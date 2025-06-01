@@ -1,0 +1,71 @@
+body {
+    background-color: blanchedalmond;
+}
+
+.family-tree {
+    width: 100%
+}
+
+.generation-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px; 
+}
+
+.card {
+    width: 200px;
+    height: 250px;
+    /* This creates the 3D space for the child elements. 
+       Think of it as the distance from your eye to the screen. */
+    perspective: 1000px;
+}
+
+.card__inner { 
+    width: 100%;
+    height: 100%;
+    position: relative; /* This is key for positioning the faces */
+    transition: transform 0.8s; /* Creates a smooth animation */
+    transform-style: preserve-3d; /* Makes the card 3D */
+}
+
+.card__face {
+    position: absolute; /* Takes faces out of normal flow and stacks them */
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* For Safari */
+    backface-visibility: hidden; /* Hides back face when turned away */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Edges of rectangular image go "behind" the rounded corners of the card face */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card__face--front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This is the magic property to resize the image to fit the card */
+}
+
+.card__face--back {
+    background-color: #2980b9; /* Gives back side a colour */
+    color: white;
+    /* This starts the back face already flipped around */
+    transform: rotateY(180deg);
+    /* Next lines just center the name vertically and horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card__inner.is-flipped {
+    transform: rotateY(180deg);
+}
+
+h1, p {
+    text-align: center;
+}
+
+h1 {
+    font-family: Georgia, serif;
+}
