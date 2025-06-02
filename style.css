@@ -33,42 +33,45 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background: transparent;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
 }
 
 .card:hover {
     transform: translateY(-10px);
     /* Lifts the cards up 10px when hovering */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); */
     /* Pronounced shadow to enhance the "lifted" effect */
 }
 
 .card__inner {
     width: 100%;
     height: 100%;
-    position: relative;
-    /* This is key for positioning the faces */
-    transition: transform 0.8s;
-    /* Creates a smooth animation */
-    transform-style: preserve-3d;
-    /* Makes the card 3D */
-    background: transparent;
+    position: relative; /* This is key for positioning the faces */
+    transition: transform 0.8s; /* Creates a smooth animation */
+    transform-style: preserve-3d; /* Makes the card 3D */
+    background: #ffffff;
     border-radius: 10px;
+    border: none;
+    outline: none;
 }
 
 .card__face {
-    position: absolute;
-    /* Takes faces out of normal flow and stacks them */
+    position: absolute; /* Takes faces out of normal flow and stacks them */
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden;
-    /* For Safari */
-    backface-visibility: hidden;
-    /* Hides back face when turned away */
-    border-radius: 10px;
-    /* Rounded corners */
-    overflow: hidden;
-    /* Edges of rectangular image go "behind" the rounded corners of the card face */
+    -webkit-backface-visibility: hidden; /* For Safari */
+    backface-visibility: hidden; /* Hides back face when turned away */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Edges of rectangular image go "behind" the rounded corners of the card face */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.card:hover .card__face {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.card__face--front {
+    background-color: transparent; /* Ensures this layer is see-through so the .card__inner background shows */
 }
 
 .card__face--front img {
@@ -83,7 +86,7 @@ body {
     /* Gives back side a colour */
     color: rgb(255, 242, 216);
     /* This starts the back face already flipped around */
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) translateZ(1px);
     /* Next lines just center the name vertically and horizontally */
     display: flex;
     justify-content: center;
