@@ -18,8 +18,8 @@ body {
     width: 100%;
     /* Make sure it takes up the full width to allow centering */
     text-align: center;
-    font-family: Georgia, serif;
-    color: #444;
+    font-family: 'Open Sans', sans-serif;
+    color: #330F0A;
     margin-bottom: 20px;
     /* Adds some space between the title and the cards below it */
 }
@@ -30,6 +30,17 @@ body {
     /* This creates the 3D space for the child elements. 
        Think of it as the distance from your eye to the screen. */
     perspective: 1000px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: transparent;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    /* Lifts the cards up 10px when hovering */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    /* Pronounced shadow to enhance the "lifted" effect */
 }
 
 .card__inner {
@@ -41,6 +52,8 @@ body {
     /* Creates a smooth animation */
     transform-style: preserve-3d;
     /* Makes the card 3D */
+    background: transparent;
+    border-radius: 10px;
 }
 
 .card__face {
@@ -56,7 +69,6 @@ body {
     /* Rounded corners */
     overflow: hidden;
     /* Edges of rectangular image go "behind" the rounded corners of the card face */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .card__face--front img {
@@ -67,9 +79,9 @@ body {
 }
 
 .card__face--back {
-    background-color: #724f1b;
+    background-color: #846c5b;
     /* Gives back side a colour */
-    color: white;
+    color: rgb(255, 242, 216);
     /* This starts the back face already flipped around */
     transform: rotateY(180deg);
     /* Next lines just center the name vertically and horizontally */
@@ -88,7 +100,8 @@ p {
 }
 
 h1 {
-    font-family: Georgia, serif;
+    font-family: 'Montserrat', sans-serif;
+    color: #330F0A;
 }
 
 .family-unit,
@@ -100,17 +113,18 @@ h1 {
     margin-bottom: 40px;
     margin-top: 20px;
     padding: 20px;
-    border: 2px solid #000000;
+    border: 2px solid #330F0A;
     border-radius: 15px;
-    background-color: #ffe3ba
+    background-color: #fae2bf
 }
 
-.family-unit h3, .card-container h3 {
+.family-unit h3,
+.card-container h3 {
     width: 100%;
     /* Make sure it takes up the full width to allow centering */
     text-align: center;
-    font-family: Georgia, serif;
-    color: #444;
+    font-family: "Open Sans", sans-serif;
+    color: #330F0A;
     margin-bottom: 20px;
     /* Adds some space between the title and the cards below it */
 }
@@ -119,4 +133,19 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.person-name {
+    font-family: 'Open Sans', sans-serif;
+}
+
+footer {
+    text-align: center;
+    margin-top: 60px;
+    /* Adds space above the footer */
+    padding: 20px;
+    color: #1E3F20;
+    /* A softer gray color */
+    font-size: 16px;
+    font-family: 'Open Sans',sans-serif;
 }
