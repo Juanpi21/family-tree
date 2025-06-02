@@ -111,3 +111,7 @@ h1 {
     gap: 20px;
 }
 
+.long-name {
+word-break: break-word;   
+}
+
