@@ -15,25 +15,20 @@ body {
 }
 
 .generation-row h2 {
-    width: 100%;
-    /* Make sure it takes up the full width to allow centering */
+    width: 100%; /* Make sure it takes up the full width to allow centering */
     text-align: center;
     font-family: 'Open Sans', sans-serif;
     color: #330F0A;
-    margin-bottom: 20px;
-    /* Adds some space between the title and the cards below it */
+    margin-bottom: 20px; /* Adds some space between the title and the cards below it */
 }
 
 .card {
     width: 200px;
-    height: 250px;
-    /* This creates the 3D space for the child elements. 
-       Think of it as the distance from your eye to the screen. */
+    height: 250px; /* This creates the 3D space for the child elements. Think of it as the distance from your eye to the screen. */
     perspective: 1000px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background: transparent;
-    border-radius: 10px;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+    border-radius: 10px; /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
 }
 
 .card:hover {
@@ -103,7 +98,7 @@ p {
 }
 
 h1 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: Helvetica, sans-serif;
     color: #330F0A;
 }
 
@@ -123,13 +118,11 @@ h1 {
 
 .family-unit h3,
 .card-container h3 {
-    width: 100%;
-    /* Make sure it takes up the full width to allow centering */
+    width: 100%; /* Make sure it takes up the full width to allow centering */
     text-align: center;
     font-family: "Open Sans", sans-serif;
     color: #330F0A;
-    margin-bottom: 20px;
-    /* Adds some space between the title and the cards below it */
+    margin-bottom: 20px; /* Adds some space between the title and the cards below it */
 }
 
 .third-generation {
@@ -144,11 +137,9 @@ h1 {
 
 footer {
     text-align: center;
-    margin-top: 60px;
-    /* Adds space above the footer */
+    margin-top: 60px; /* Adds space above the footer */
     padding: 20px;
-    color: #1E3F20;
-    /* A softer gray color */
+    color: #1E3F20; /* A softer gray color */
     font-size: 16px;
     font-family: 'Open Sans',sans-serif;
     font-weight: bold;
